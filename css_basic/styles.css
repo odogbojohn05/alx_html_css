@@ -1,35 +1,35 @@
-/* Body is a flex container with vertical stacking */
+
 body {
   display: flex;
-  flex-direction: column; /* header, main, footer stacked vertically */
-  height: 100vh;          /* full viewport height */
-  margin: 0;              /* remove default margin */
+  flex-direction: column; 
+  height: 100vh;          
+  margin: 0;              
 }
 
-/* Main is a flex container with horizontal layout */
+
 main {
   display: flex;
-  flex-direction: row;    /* article and aside side by side */
-  flex: auto;             /* main grows to fill available space */
+  flex-direction: row;    
+  flex: auto;             
 }
 
-/* Article takes 2/3 of the width */
+
 article {
-  flex: 2;                /* 2 parts out of 3 */
-  overflow-y: auto;       /* scrollable if content is long */
+  flex: 2;                
+  overflow-y: auto;       
   padding: 1rem;
   background-color: #f9f9f9;
 }
 
-/* Aside takes 1/3 of the width */
+
 aside {
-  flex: 1;                /* 1 part out of 3 */
-  overflow-y: auto;       /* scrollable if content is long */
+  flex: 1;               
+  overflow-y: auto;       
   padding: 1rem;
   background-color: #eaeaea;
 }
 
-/* Optional styling for header and footer */
+
 header, footer {
   padding: 1rem;
   background-color: #333;
@@ -67,4 +67,12 @@ aside {
   color: white;
   text-align: center;
 }
+.logo {
+  font-size: 5rem;      
+  margin-right: 3rem;   
+  color: #3498db;       
+  font-weight: bold;
+}
+
+
 
