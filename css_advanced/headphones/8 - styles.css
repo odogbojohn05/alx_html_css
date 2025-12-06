@@ -1,0 +1,76 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Source Sans Pro', sans-serif; background: #000; color: #fff; }
+.container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+
+.site-header { position: fixed; top: 0; width: 100%; padding: 20px; background: #111; z-index: 10; }
+.header-content { display: flex; justify-content: space-between; align-items: center; }
+.logo-text { font-size: 1.5rem; font-weight: bold; }
+
+.nav ul { list-style: none; display: flex; gap: 30px; }
+.nav a { text-decoration: none; color: #fff; transition: color 0.3s; }
+.nav a:hover { color: #FF6565; }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 480px) {
+  .nav {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: #111;
+    width: 200px;
+    border-radius: 8px;
+    display: none;
+    flex-direction: column;
+    padding: 20px;
+    animation: fadeIn 0.3s ease forwards;
+  }
+  .nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .nav.open {
+    display: flex;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section { padding: 80px 20px; text-align: center; background: #fff; color: #333; }
+.section.dark { background: #222; color: #fff; }
+.features { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.feature { background: #FF6565; color: #fff; padding: 20px; border-radius: 8px; animation: floatUpDown 3s ease-in-out infinite; }
+@keyframes floatUpDown {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+.results-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.pentagon {
+  width: 120px; height: 120px; margin: 0 auto;
+  background: #FF6565; clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+  display: flex; align-items: center; justify-content: center;
+  animation: pulseScale 4s ease-in-out infinite;
+}
+@keyframes pulseScale {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.08); opacity: 0.9; }
+  100% { transform: scale(1); opacity: 1; }
+}
